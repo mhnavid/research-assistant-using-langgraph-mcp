@@ -5,6 +5,7 @@ from langchain.chat_models import init_chat_model
 from config import MODEL_NAME, TOGETHER_API_KEY, MODEL_PROVIDER
 from planner_agent import planner_agent
 from researcher_agent import researcher_agent
+from summarizer_agent import summarizer_agent
 
 set_llm_cache(SQLiteCache(database_path=".langchain_cache.db"))
 
@@ -28,8 +29,20 @@ def run_research_pipeline(topic: str):
     return research_notes
 
 
+def summarize_research(research_notes: dict) -> str:
+    combined = "\n".join([f"{k}: {v}" for k, v in research_notes.items()])
+    final_summary = summarizer_agent(model, combined)
+    return final_summary
+
+
 topic = "The impact of climate change on the economy"
+
 notes = run_research_pipeline(topic)
 
+print("Research Notes:")
 for sub, summary in notes.items():
     print(f"🔹 {sub}\n{summary}\n")
+
+final_summary = summarize_research(notes)
+print("Final Summary:")
+print(final_summary)
