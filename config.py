@@ -7,3 +7,5 @@ load_dotenv()
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 MODEL_NAME = os.getenv("MODEL_NAME")
 MODEL_PROVIDER = os.getenv("MODEL_PROVIDER")
+
+SEARCHAPI_API_KEY = os.getenv("SEARCHAPI_API_KEY")
