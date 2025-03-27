@@ -1,5 +1,5 @@
 from typing import Dict
-from graph_state import GraphState
+from state.graph_state import GraphState
 from agents.summarizer_agent import summarizer_agent
 
 def summarizer_node(state: GraphState, model) -> Dict:

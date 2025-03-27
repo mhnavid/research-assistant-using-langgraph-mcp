@@ -1,6 +1,6 @@
 from typing import Dict
 
-from graph_state import GraphState
+from state.graph_state import GraphState
 from agents.researcher_agent import researcher_agent
 
 def researcher_node(state: GraphState, model) -> Dict:

@@ -1,7 +1,11 @@
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 from mcp.server.fastmcp import FastMCP
 import json
 
-from graph_workflow_builder import graph
+from graphs.graph_workflow_builder import graph
 
 mcp = FastMCP("AI Research Assistant")
 

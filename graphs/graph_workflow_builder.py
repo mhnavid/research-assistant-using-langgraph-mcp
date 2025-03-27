@@ -3,14 +3,14 @@ from langchain_community.cache import SQLiteCache
 from langchain.chat_models import init_chat_model
 from langgraph.graph import StateGraph, START, END
 
-from config import MODEL_NAME, TOGETHER_API_KEY, MODEL_PROVIDER
-from graph_state import GraphState
+from config.config import MODEL_NAME, TOGETHER_API_KEY, MODEL_PROVIDER
+from state.graph_state import GraphState
 from nodes.planner_node import planner_node
 from nodes.researcher_node import researcher_node
-from conditions import check_research_complete
+from agents.contitions.conditions import check_research_complete
 from nodes.summarizer_node import summarizer_node
 
-set_llm_cache(SQLiteCache(database_path=".langchain_cache.db"))
+set_llm_cache(SQLiteCache(database_path="db/.langchain_cache.db"))
 
 model = init_chat_model(
     model=MODEL_NAME,

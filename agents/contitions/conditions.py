@@ -1,4 +1,4 @@
-from graph_state import GraphState
+from state.graph_state import GraphState
 
 def check_research_complete(state: GraphState) -> bool:
     subtopics = state.get("subtopics", [])

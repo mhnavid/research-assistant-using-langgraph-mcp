@@ -1,4 +1,8 @@
-from graph_workflow_builder import graph
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from graphs.graph_workflow_builder import graph
 
 # Topic to research
 topic = "The role of AI in climate change adaptation"
