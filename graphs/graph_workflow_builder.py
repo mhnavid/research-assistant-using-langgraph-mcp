@@ -7,7 +7,7 @@ from config.config import MODEL_NAME, TOGETHER_API_KEY, MODEL_PROVIDER
 from state.graph_state import GraphState
 from nodes.planner_node import planner_node
 from nodes.researcher_node import researcher_node
-from agents.contitions.conditions import check_research_complete
+from nodes.contitions.conditions import check_research_complete
 from nodes.summarizer_node import summarizer_node
 
 set_llm_cache(SQLiteCache(database_path="db/.langchain_cache.db"))
